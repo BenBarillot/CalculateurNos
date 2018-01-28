@@ -227,6 +227,9 @@ if point_sp_atk >= 100:
     attaque_sp = int(attaque_sp) + amélio_sp_atk*10
     crit_arme = crit_arme + 50
     crit_arme = int(crit_arme)
+
+else : 
+    attaque_sp = point_sp_atk*10
     
 
 
