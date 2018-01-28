@@ -1,0 +1,12 @@
+Epeiste spectral inconnu
+Feu
+Def+6
+
+def cac = 513
+def distance = 639
+def magique = 254
+
+res feu 75
+res lulu 90%
+eau 85
+obscure 95

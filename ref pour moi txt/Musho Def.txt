@@ -1,0 +1,7 @@
+def cac : 244
+def distance 264
+def magique 241
+
+sp 100/10/60/30
+
+diminue degats cc = 35 30 34 45

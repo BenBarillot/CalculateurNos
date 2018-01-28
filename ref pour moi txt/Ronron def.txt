@@ -1,0 +1,62 @@
+def cac :348
+def loin :358 
+def magique :341
+Up armure = 8
+Def cac armure = 704
+Def distance armure = 588
+Def magique armure = 440
+
+je tape : base 288-345 crit = 400 up degat 2k5 up degat cc 3k
+
+RUNE
+diminue crit = 6%
+Augmente la defenses magiques = 146
+Augmente la resistance obscurité = 10%
+All def = 19%
+Def pvp = 32% +2% bijou = 34%
+All_Esquive = 15%
+Degats magique esquive = 10%
+
+BIJOU
+diminue degats crit = 105%
+Def dist = 40 
+Def magique = 40
+Def pvp = 2%
+
+
+ARMURE 
+Diminue degats crit = 60%
+Diminue proba crit = 9%
+All res = 10%
+
+
+
+Moi sur ronron 233 414 3k
+
+BUFF VERT 
+all def 99
+all res 15%
+Degat crit -60%
+def pvp 16 (lvl joueur / 6) %
+
+GANT VALA 
+150 all def 
+Element 100
+
+BOTTE geant 
+100 ALL def
+50 element
+
+BOTTE GEANT
+
+150 def 
+100 all element
+
+Gant magma 
+100 all def 
+50 element
+
+SP6 RONRON
+
+20 def et 16 amélio
+

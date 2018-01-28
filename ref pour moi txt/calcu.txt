@@ -1,0 +1,21 @@
+Degats_totaux_min = g+i
+degats_totaux_max = h+s
+degats_min a=?
+degats_max b=?
+attaque_supp c=?
+degats_min+attaque_supp d= a+c
+degats_max+attaque_supp e= b+c
+degats_relatitfs f=?
+d+ degats_relatifs g= d*f/100 +d
+e+ degats_relatifs h= e*f/100 +e
+Element_total_min  i=[(n+o+q+r)+(g+100)*p%]*(1+j)*(100%-k)
+Element_total_max  s=[(n+o+q+r)+(h+100)*p%]*(1+j)*(100%-k)
+element arme(princi + secondaire) n=?
+element rune o=?
+element fée p=?
+element skill q=?
+element buff r=?
+Bonus elementaire j=?
+resistance_adv k=? %
+
+lvl m=? (morale)
