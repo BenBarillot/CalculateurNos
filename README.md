@@ -4,6 +4,9 @@
 # Pré-requis pour l'utilisation
 Python dans sa derniere version, téléchargeable directement sur leurs sites.
 
+# Utilisation
+Lancer calcu.py 
+
 # Modifications à venir
 Le calcul de degats prend en compte pour le moment le pallier attaque de 100 sur les sp's.
 
