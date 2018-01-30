@@ -249,6 +249,11 @@ print('pourcentage degat monstre/pvp/fée/bonus degat(chapeau) (additionner le t
 pourcentage_mob_pvp = input()
 pourcentage_mob_pvp = int(pourcentage_mob_pvp)
 
+print('Diminue def en pvp %')
+diminue_def = input()
+diminue_def = int(diminue_def)
+
+MALUS_DEF = 1 - (diminue_def/100)
 ATTAQUE_TOTALE_MIN = perso_max + attaque_min_arme + attaque_sp + attaque_skill + attaque_buff + attaque_rune + 15 + attaque_masque + attaque_tarot
 ATTAQUE_TOTALE_MAX = perso_min + attaque_max_arme + attaque_sp + attaque_skill + attaque_buff + attaque_rune + 15 + attaque_masque + attaque_tarot
 
@@ -280,7 +285,7 @@ BONUS_DEF = (1 + cost_nos/100 + S_def/100 + def_pvp/100)
 
 #DÉFENSE FINALE = DÉFENSE TOTALE x Bonus défense x Malus défense
 
-DEFENSE_FINALE = DEF_TOTALE * BONUS_DEF 
+DEFENSE_FINALE = (DEF_TOTALE*BONUS_DEF)*MALUS_DEF
 
 #DÉGÂTS PHYSIQUES= (ATTAQUE FINALE - DÉFENSE FINALE) x (1 + Taille de critique)
 
