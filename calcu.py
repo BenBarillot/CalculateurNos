@@ -4,7 +4,7 @@ print('pve_dander/pve_6.2/pvp_escri/pvp_archer_93/pvp_archer_hero')
 reference = input('')
 reference = str(reference)
 
-print('Vous utilisez atk dist/cac/mag')
+print('Vous utilisez dist/cac/mag')
 atk = input('')
 atk = str(atk)
 
@@ -81,15 +81,15 @@ if reference == 'pvp_archer_93':
 #ATTAQUE TOTALE = attaque du perso + attaque de la SP + attaque du masque + attaque du tarot + armes + attaque du skill + attaque du buff + attaque de rune + attaque de charge + up de l'attaque final + 15
 #ATTAQUE FINALE = ATTAQUE TOTALE x [1+ ([b]S[/b] % pour les dégâts) + (% pour les dégâts sur un type de monstre/en pvp)] x (1+% d'augmentation de dégâts à 15% de chance en pvp) x [1+ (% d'augmentation de dégâts de l'arme principale) + (% d'augmentation de dégâts de l'arme secondaire)]
 
-print('attaque du perso min')
+print('attaque du perso min (arme enlevé fiche perso min=max)')
 perso_min = input()
 perso_min = int(perso_min)
 
-print('attaque du perso max ')
+print('attaque du perso max (arme enlevé fiche perso min=max) ')
 perso_max = input()
 perso_max = int(perso_max)
 
-print("degats crit de l'arme")
+print("degats crit de l'arme + degat crit de la rune")
 crit_arme = input()
 crit_arme = int(crit_arme)
 
@@ -101,7 +101,7 @@ print('attaque tarot')
 attaque_tarot = input()
 attaque_tarot = int(attaque_tarot)
 
-print('Up de votre arme +1 +2 ect')
+print('Up de votre arme 1 2 3... Pas de + devant le chiffre')
 up_arme = input()
 up_arme = int(up_arme)
 
@@ -201,7 +201,7 @@ if up_final_arme == 10:
     attaque_max = attaque_max_arme*200/100 + attaque_max_arme
 
 
-print('point sp atk')
+print('point sp atk ( en comptant les SL )')
 point_sp_atk = input()
 point_sp_atk = int(point_sp_atk)
 
@@ -209,7 +209,7 @@ print('Amélio sp atk')
 amélio_sp_atk = input()
 amélio_sp_atk = int(amélio_sp_atk)
 
-print('point element sp')
+print('point element sp ( en comptant les SL )')
 point_sp_element = input()
 point_sp_element = int(point_sp_element)
 
@@ -241,11 +241,11 @@ print('attaque buff')
 attaque_buff = input()
 attaque_buff = int(attaque_buff)
 
-print('attaque de la rune')
+print('attaque de la rune (attaque supplémentaire)')
 attaque_rune = input()
 attaque_rune = int(attaque_rune)
 
-print('pourcentage degat monstre/pvp')
+print('pourcentage degat monstre/pvp/fée/bonus degat(chapeau) (additionner le tout) Ne pas mettre de %')
 pourcentage_mob_pvp = input()
 pourcentage_mob_pvp = int(pourcentage_mob_pvp)
 
@@ -256,7 +256,7 @@ print('S_degat')
 S_degat = input()
 S_degat = int(S_degat)
 
-print('Augmentation de degats')
+print('Augmentation de degats (Arme principal + arme secondaire, resultats de laddition)')
 augmentation = input()
 augmentation = int(augmentation)
 
@@ -294,15 +294,15 @@ DEGATS_PHYSIQUES_MAX = (ATTAQUE_FINAL_MAX - DEFENSE_FINALE)
 
 
 #Élément du personnage = élément de l'arme principale + élément de l'arme secondaire + élément du masque + élément des résistances + élément des bijoux + élément de rune + élément du skill + élément de buff
-print('element arme principale')
+print('element arme principale + secondaire (resultat de laddition')
 element_arme_principale = input()
 element_arme_principale = int(element_arme_principale)
 
-print('element arme secondaire')
+print('element bijou/res/chapeaucost/aile')
 element_arme_secondaire = input()
 element_arme_secondaire = int(element_arme_secondaire)
 
-print('element de la rune')
+print('element de la rune ( Augmente l"élément de X%)')
 element_rune = input()
 element_rune = int(element_rune)
 
@@ -313,7 +313,7 @@ element_skill = int(element_skill)
 ELEMENT_PERSONNAGE = element_arme_principale + element_arme_secondaire + element_rune + element_skill +element_sp
 
 #Élément de la fée = (Attaque finale + 100) x % de la fée
-print('pourcentage de la fée')
+print('pourcentage de la fée, pas de %')
 fee = input()
 fee = int(fee)
 
@@ -329,7 +329,7 @@ baisse_res = int(baisse_res)
 
 RES_ADV = res_adv - baisse_res
 
-print('Bonus elementaire')
+print('Bonus elementaire (0% pour le même élément, 30 si fée contre rien ect...)')
 bonus_elementaire = input()
 bonus_elementaire = int(bonus_elementaire)
 
@@ -354,12 +354,12 @@ CRIT_AUGMENTE_MIN = (((DEGATS_MIN*(1 + ((crit_arme - degats_crit_reduction)/100)
 CRIT_AUGMENTE_MAX = (((DEGATS_MAX*(1 + ((crit_arme - degats_crit_reduction)/100))) + (((ATTAQUE_FINAL_MAX*augmentation/100 + ELEMENT_AUGMENTATION_MAX)))))
 
 
-print('degats minimum',DEGATS_MIN)
-print('degats max',DEGATS_MAX)
-print('degats augmente min',DEGATS_AUGMENTE_MIN)
-print('degats augmente max ', DEGATS_AUGMENTE_MAX)
-print('degats crit min', DEGATS_CRIT_MIN)
-print('degats crit max', DEGATS_CRIT_MAX)
-print('degats augmente crit min',CRIT_AUGMENTE_MIN)
-print('degats augmente crit max',CRIT_AUGMENTE_MAX)
+print('Dégats minimum',DEGATS_MIN)
+print('Dégats max',DEGATS_MAX)
+print('Dégats augmente min',DEGATS_AUGMENTE_MIN)
+print('Dégats augmente max ', DEGATS_AUGMENTE_MAX)
+print('Dégats crit min', DEGATS_CRIT_MIN)
+print('Dégats crit max', DEGATS_CRIT_MAX)
+print('Dégats augmente crit min',CRIT_AUGMENTE_MIN)
+print('Dégats augmente crit max',CRIT_AUGMENTE_MAX)
 os.system('pause')
