@@ -223,7 +223,7 @@ element_sp = int(point_sp_element + amélio_sp_element)
 
 
 if point_sp_atk >= 100:
-    attaque_sp = point_sp_atk*10 + 120
+    attaque_sp = point_sp_atk*10 + 20
     attaque_sp = int(attaque_sp) + amélio_sp_atk*10
     crit_arme = crit_arme + 50
     crit_arme = int(crit_arme)
@@ -253,10 +253,14 @@ print('Diminue def en pvp %')
 diminue_def = input()
 diminue_def = int(diminue_def)
 
-MALUS_DEF = 1 - (diminue_def/100)
+
+    
+
+
 ATTAQUE_TOTALE_MIN = perso_max + attaque_min_arme + attaque_sp + attaque_skill + attaque_buff + attaque_rune + 15 + attaque_masque + attaque_tarot
 ATTAQUE_TOTALE_MAX = perso_min + attaque_max_arme + attaque_sp + attaque_skill + attaque_buff + attaque_rune + 15 + attaque_masque + attaque_tarot
 
+MALUS_DEF = 1 - (diminue_def/100)
 print('S_degat')
 S_degat = input()
 S_degat = int(S_degat)
@@ -349,14 +353,31 @@ DEGAT_ELEMENTS_MAX = (ELEMENT_PERSONNAGE+ (ATTAQUE_FINAL_MAX+ 100)*fee/100)*(1 +
 ELEMENT_AUGMENTATION_MIN = (((ELEMENT_PERSONNAGE + element_fee_min)*(1 + (bonus_elementaire/100)))*(augmentation/100))*((1 - ((res_adv - baisse_res)/100)))
 ELEMENT_AUGMENTATION_MAX = (((ELEMENT_PERSONNAGE + element_fee_max)*(1 + (bonus_elementaire/100)))*(augmentation/100))*((1 - ((res_adv - baisse_res)/100)))
 
-DEGATS_MIN = DEGATS_PHYSIQUES_MIN + ELEMENT_AUGMENTATION_MIN
-DEGATS_MAX = DEGATS_PHYSIQUES_MAX + ELEMENT_AUGMENTATION_MAX
-DEGATS_AUGMENTE_MIN = ((ATTAQUE_FINAL_MIN + ELEMENT_AUGMENTATION_MIN)*(1 + augmentation/100)) - DEFENSE_FINALE
-DEGATS_AUGMENTE_MAX = ((ATTAQUE_FINAL_MAX + ELEMENT_AUGMENTATION_MAX)*(1 + augmentation/100)) - DEFENSE_FINALE
-DEGATS_CRIT_MIN = (DEGATS_PHYSIQUES_MIN*(1 + ((crit_arme - degats_crit_reduction)/100))) + ELEMENT_AUGMENTATION_MIN
-DEGATS_CRIT_MAX = (DEGATS_PHYSIQUES_MAX*(1 + ((crit_arme - degats_crit_reduction)/100))) + ELEMENT_AUGMENTATION_MAX
-CRIT_AUGMENTE_MIN = (((DEGATS_MIN*(1 + ((crit_arme - degats_crit_reduction)/100))) + (((ATTAQUE_FINAL_MIN*augmentation/100 + ELEMENT_AUGMENTATION_MIN)))))
-CRIT_AUGMENTE_MAX = (((DEGATS_MAX*(1 + ((crit_arme - degats_crit_reduction)/100))) + (((ATTAQUE_FINAL_MAX*augmentation/100 + ELEMENT_AUGMENTATION_MAX)))))
+print('Voulez vous être sous oeil? O/N')
+oeil = input()
+
+if oeil == 'O':
+    print('Nombre de cellules')
+    nbr_cellule = input()
+    nbr_cellule = int(nbr_cellule)
+    degat_oeil = nbr_cellule*3.75
+    DEGATS_MIN = (DEGATS_PHYSIQUES_MIN + ELEMENT_AUGMENTATION_MIN)*(1+(degat_oeil/100))
+    DEGATS_MAX = (DEGATS_PHYSIQUES_MAX + ELEMENT_AUGMENTATION_MAX)*(1+(degat_oeil/100))
+    DEGATS_AUGMENTE_MIN = (((ATTAQUE_FINAL_MIN + ELEMENT_AUGMENTATION_MIN)*(1 + augmentation/100)) - DEFENSE_FINALE)*(1+(degat_oeil/100))
+    DEGATS_AUGMENTE_MAX = (((ATTAQUE_FINAL_MAX + ELEMENT_AUGMENTATION_MAX)*(1 + augmentation/100)) - DEFENSE_FINALE)*(1+(degat_oeil/100))
+    DEGATS_CRIT_MIN = ((DEGATS_PHYSIQUES_MIN*(1 + ((crit_arme - degats_crit_reduction)/100))) + ELEMENT_AUGMENTATION_MIN)*(1+(degat_oeil/100))
+    DEGATS_CRIT_MAX = ((DEGATS_PHYSIQUES_MAX*(1 + ((crit_arme - degats_crit_reduction)/100))) + ELEMENT_AUGMENTATION_MAX)*(1+(degat_oeil/100))
+    CRIT_AUGMENTE_MIN = ((((DEGATS_MIN*(1 + ((crit_arme - degats_crit_reduction)/100))) + (((ATTAQUE_FINAL_MIN*augmentation/100 + ELEMENT_AUGMENTATION_MIN))))))*(1+(degat_oeil/100))
+    CRIT_AUGMENTE_MAX = ((((DEGATS_MAX*(1 + ((crit_arme - degats_crit_reduction)/100))) + (((ATTAQUE_FINAL_MAX*augmentation/100 + ELEMENT_AUGMENTATION_MAX))))))*(1+(degat_oeil/100))
+else :
+    DEGATS_MIN = DEGATS_PHYSIQUES_MIN + ELEMENT_AUGMENTATION_MIN
+    DEGATS_MAX = DEGATS_PHYSIQUES_MAX + ELEMENT_AUGMENTATION_MAX
+    DEGATS_AUGMENTE_MIN = ((ATTAQUE_FINAL_MIN + ELEMENT_AUGMENTATION_MIN)*(1 + augmentation/100)) - DEFENSE_FINALE
+    DEGATS_AUGMENTE_MAX = ((ATTAQUE_FINAL_MAX + ELEMENT_AUGMENTATION_MAX)*(1 + augmentation/100)) - DEFENSE_FINALE
+    DEGATS_CRIT_MIN = (DEGATS_PHYSIQUES_MIN*(1 + ((crit_arme - degats_crit_reduction)/100))) + ELEMENT_AUGMENTATION_MIN
+    DEGATS_CRIT_MAX = (DEGATS_PHYSIQUES_MAX*(1 + ((crit_arme - degats_crit_reduction)/100))) + ELEMENT_AUGMENTATION_MAX
+    CRIT_AUGMENTE_MIN = (((DEGATS_MIN*(1 + ((crit_arme - degats_crit_reduction)/100))) + (((ATTAQUE_FINAL_MIN*augmentation/100 + ELEMENT_AUGMENTATION_MIN)))))
+    CRIT_AUGMENTE_MAX = (((DEGATS_MAX*(1 + ((crit_arme - degats_crit_reduction)/100))) + (((ATTAQUE_FINAL_MAX*augmentation/100 + ELEMENT_AUGMENTATION_MAX)))))
 
 
 print('Dégats minimum',DEGATS_MIN)
